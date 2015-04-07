@@ -203,14 +203,14 @@ function getWeather() {
   });
 }
 ```
-<a href="/src/modulo6/jquery/ajax.html" target="_blank">Abrir ejemplo en el navegador...</a>
+<a href="{{ site.baseurl }}src/modulo6/jquery/ajax.html" target="_blank">Abrir ejemplo en el navegador...</a>
 
 ## Proyecto Memory
 Juego de cartas boca abajo donde hay que recordar la posición e ir haciendo parejas. En esta versión en lugar de imágenes se utilizan las tablas de multiplicar y se tienen como máximo 40 intentos para hacer las 10 parejas. Cada vez que se empieza un juego se selecciona aleatóriamente el valor del multiplicando entre 2 y 9.
 
 ![](./images/memory.png)
 
-  <a href="/src/modulo6/jquery/memory/index.html" target="_blank">Jugar...</a>
+  <a href="{{ site.baseurl }}src/modulo6/jquery/memory/index.html" target="_blank">Jugar...</a>
 
 ### Paso a paso
 La resolución del juego básicamente consiste en:
