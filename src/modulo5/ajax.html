@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script>
+    function getWeather() {
+      var query= document.getElementById('ciudad').value;
+      
+      if (query === '') {
+        alert('Texto en blanco');
+        return;
+      }
+      
+      var req = new XMLHttpRequest();
+      req.open('get', 'http://api.openweathermap.org/data/2.5/find?type=like&lang=es&units=metric&q=' + query);
+
+      // cada vez que cambia el estado de la petición...
+      req.onreadystatechange = function () {
+        if (req.readyState === 4) { // readyState 4 cuando ha finalizado la petición
+          if (req.status === 200) { // 200 ok
+            evalResp(req.responseText); // evalúa la respuesta
+          } else {
+            alert('Error: ' + req.status); // Ha ocurrido un error
+          }
+        }
+      }
+      req.send(); // envía petición
+    }
+
+    function evalResp(resp) {
+      var result = JSON.parse(resp),
+          div_resp= document.getElementById('div_resp'),
+          newHtml= '';
+      
+      if (result.cod !== '200' || result.count === 0) {
+        div_resp.innerHTML= 'Ningún resultado';
+      } else {
+        for (var i= 0; i < result.list.length; i++) newHtml+= '<b>'+result.list[i].name+' ('+result.list[i].sys.country+'):</b> '+result.list[i].main.temp+' ºC<br>';
+        div_resp.innerHTML= newHtml;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <p>
+    Ciudad: <input type="text" id="ciudad"> <input type="button" value="Buscar" onclick="getWeather()">
+  </p>
+  <div id="div_resp"></div>
+</body>
+
+</html>

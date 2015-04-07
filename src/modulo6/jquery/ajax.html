@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    function getWeather() {
+      var query= $('#ciudad').val();
+
+      if (query === '') {
+        alert('Texto en blanco');
+        return;
+      }
+
+      $.getJSON('http://api.openweathermap.org/data/2.5/find?type=like&lang=es&units=metric&q=' + query)
+        .done(function(data) {
+          var $div_resp= $('#div_resp');
+
+          if (data.cod !== '200' || data.count === 0) {
+            $div_resp.html('Ningún resultado');
+          } else {
+            $div_resp.empty();
+            for (var i= 0; i < data.list.length; i++) $div_resp.append('<b>'+data.list[i].name+' ('+data.list[i].sys.country+'):</b> '+data.list[i].main.temp+' ºC<br>');
+          }
+        })
+        .fail(function(jqxhr, textStatus, error) {
+          console.log('Error: ' + textStatus + ', ' + error );
+        });
+    }
+  </script>
+</head>
+
+<body>
+  <p>
+    Ciudad: <input type="text" id="ciudad"> <input type="button" value="Buscar" onclick="getWeather()">
+  </p>
+  <div id="div_resp"></div>
+</body>
+
+</html>

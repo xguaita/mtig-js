@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introducción a las aplicaciones web de mapas</title>
+
+		<meta name="description" content="Introducción a las aplicaciones web de mapas. MTIG-17. Programación con Javascript.">
+		<meta name="author" content="Xisco Guaita @xguaita">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h4>Máster en Tecnologías de la Información Geográfica</h4>
+					<h2>Introducción a las aplicaciones web de mapas</h2>
+					<img data-src="../../images/logomtig.png" style="border:0px">
+					<p>
+						Xisco Guaita
+					</p>
+				</section>
+
+				<section>
+					<h2>Contenido</h2>
+					<ul>
+						<li>Evolución de los GIS</li>
+						<li>Servidores geoespaciales</li>
+						<li>Revolución del <q>web mapping</q></li>
+						<li>Factores que influyen en el rendimiento</li>
+						<li>Ejemplo aplicación web sencilla</li>
+						<li>Presente y futuro del sector geoespacial</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Objetivos</h2>
+					<ul>
+						<li>Diferenciar los componentes de una aplicación web de mapas</li>
+						<ul>
+						<li>Clientes</li>
+						<li>Servicios</li>
+						<li>Datos</li>
+						</ul>
+						<li>Conocer los diferentes factores que influyen en el rendimiento de las aplicaciones web geoespaciales</li>
+						<li>Descubrir que desarrollar una aplicación informática no es una tarea trivial</li>
+					</ul>
+				</section>
+
+				<!-- Evolución de los GIS -->
+				<section>
+					<section>
+						<h1>Evolución de los GIS</h1>
+					</section>
+					<section>
+						<h3>Evolución de los GIS</h3>
+						<img data-src="images/evogis.png" class="stretch" style="border:0px">
+						<br><small>© ESRI</small>
+					</section>
+					<section>
+						<h3>Evolución de los GIS</h3>
+						<img data-src="images/busserv.png" class="stretch" style="border:0px">
+						<br><small>© ESRI</small>
+					</section>
+					<section>
+						<h3>Arquitectura cliente/servidor</h3>
+						<p>Esta arquitectura consiste básicamente en un programa (el cliente) que realiza peticiones a otro programa (el servidor) que le da respuesta</p>
+						<img data-src="images/clisrv.png" style="border:0px">
+					</section>
+					<section>
+						<h3>Arquitectura cliente/servidor</h3>
+						<ul>
+							<li style="font-weight: bolder">Cliente</li>
+							<ul>
+							<li>Activo ⇨ Inicia la petición</li>
+							<li>Espera y procesa la respuesta</li>
+							<li>Presenta la interfaz de usuario (si es necesaria)</li>
+							</ul>
+							<li style="font-weight: bolder">Servidor</li>
+							<ul>
+							<li>Pasivo ⇨ Espera peticiones</li>
+							<li>Procesan la petición y envían la respuesta</li>
+							<li>Aceptan peticiones de un gran número de clientes</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h3>Arquitectura cliente/servidor GIS</h3>
+						<img data-src="images/ecosystem.png" class="stretch" style="border:0px">
+						<br><small>© Boundless</small>
+					</section>
+					<section>
+						<h3>Arquitectura cliente/servidor GIS</h3>
+						<img data-src="images/webgis.png" class="stretch" style="border:0px">
+						<br><small>© Boundless</small>
+					</section>
+				</section>
+
+				<!-- Servidores geoespaciales -->
+				<section>
+					<section>
+						<h1>Servidores geoespaciales</h1>
+					</section>
+					<section>
+						<h3>Servicios de mapas</h3>
+						<ul>
+							<li>Los servicios de mapas generan mapas (imágenes) a petición, según una serie de parámetros: capas visibles, simbología, extensión, proyección, etc</li>
+							<li>Generar el mapa implica</li>
+							<ul>
+							<li>Recuperar la información</li>
+							<li>Renderizar la imagen</li>
+							</ul>
+							<li>Estándares OGC ⇨ WMS</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Servicios de mapas</h3>
+						<img data-src="images/wms.png" class="stretch" style="border:0px">
+						<br><small>© OpenGeo</small>
+					</section>
+					<section>
+						<h3>Servicios de datos</h3>
+						<ul>
+							<li>Los servicios de datos generan conjuntos de datos espaciales a petición, según una serie de parámetros: capas, filtros, extensión, proyección, etc</li>
+							<li>Generar el mapa implica</li>
+							<ul>
+							<li>Recuperar la información</li>
+							<li>Codificar los elementos</li>
+							</ul>
+							<li>Estándares OGC ⇨ WFS, WCS</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Servicios de datos</h3>
+						<img data-src="images/wfs.png" class="stretch" style="border:0px">
+						<br><small>© OpenGeo</small>
+					</section>
+				</section>
+
+				<!-- Revolución -->
+				<section>
+					<section>
+						<h1>Revolución del <q>web mapping</q></h1>
+					</section>
+					<section>
+						<h3>Google Maps</h3>
+						<ul>
+							<li>Febrero de 2005 beta</li>
+							<li>Cambio de concepto</li>
+							<ul>
+							<li>Escalas predefinidas ⇨ mapas pregenerados ⇨ cachés</li>
+							<li>SENCILLO</li>
+								<ul>
+								<li>Sin herramientas</li>
+								<li>Orientado al usuario final <b>NO</b> técnico</li>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h3>Interoperabilidad</h3>
+						<ul>
+							<li>Estándares</li>
+							<ul>
+								<li>WMS, WFS, GML, KML, GeoJSON...</li>
+							</ul>
+							<li><a  href="http://www.opengeospatial.org/" target="_blank">Open Geospatial Consortium</a> (OGC, fundado en 1994)</li>
+						</ul>
+						<img data-src="http://imgs.xkcd.com/comics/standards.png" style="border:0px">
+						<br><small>© http://xkcd.com/927</small>
+					</section>
+				</section
+
+				<!-- Rendimiento -->
+				<section>
+					<section>
+						<h1>Factores que influyen en el rendimiento</h1>
+					</section>
+					<section>
+						<blockquote>El objetivo de toda aplicación web debe ser mantener la capacidad de respuesta cuando da servicio a gran cantidad de usuarios</blockquote>
+						<br></br>
+						<h4>Factores a tener en cuenta</h4>
+						<ul>
+							<li>Recursos del servidor (hardware y software)</li>
+							<li>Gestión de datos</li>
+							<li>Renderizado/codificación</li>
+							<li>Procedimientos</li>
+							<li>Percepción de rendimiento</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Recursos del servidor</h3>
+						<ul>
+							<li>Hardware</li>
+							<ul>
+								<li>RAM ⇨ disminuye la E/S (acceso a disco)</li>
+								<li>CPU/cores ⇨ mayor concurrencia</li>
+								<li>Red (ancho de banda) ⇨ más clientes</li>
+								<li>Almacenamiento (disco) ⇨ acceso más rápido a datos</li>
+							</ul>
+							<li>Software ⇨ configuración óptima!</li>
+							<ul>
+								<li>Sistema operativo</li>
+								<li>Servidor web/aplicaciones</li>
+								<li>Servidor de BD</li>
+								<li>Servidor geoespacial</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h3>Gestión de datos</h3>
+						<ul>
+							<li>Objetivo ⇨ Obtener rápido lo estrictamente necesario</li>
+							<li>Datos vectoriales</li>
+							<ul>
+								<li>Formato nativo/adecuado al servidor de mapas</li>
+								<li>Capas pequeñas / estáticas ⇨ ficheros locales</li>
+								<li>No reproyectar dinámicamente</li>
+								<li>Simplificar geometrías en la BD ⇨ No renderizar detalles indistinguibles</li>
+								<li>Crear indices en la BD para filtros y estilos, evitar joins</li>
+							</ul>
+							<li>Datos ráster</li>
+							<ul>
+								<li>Imágenes grandes: GeoTIFF tiled, ECW, JPEG2000</li>
+								<li>Servidor de imágenes, pirámides</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h3>Renderizado</h3>
+						<ul>
+							<li>Control de escalas</li>
+							<li>Simbolización sencilla</li>
+							<li>Evitar antialiasing ⇨ imágenes 4-6 veces más grandes</li>
+							<li>Evitar el etiquetado dinámico ⇨ anotaciones</li>
+							<li>Formato de imagen</li>
+							<ul>
+								<li>JPEG ⇨ ortofotos, mapas base muy complejos</li>
+								<ul>
+									<li>Muy pequeño</li>
+									<li>Formato con pérdida, no admite transparencia</li>
+								</ul>
+								<li>GIF, PNG8 ⇨ vectores simbolización sencilla, no aliasing</li>
+								<ul>
+									<li>Pequeño y rápido de codificar (paleta fija)</li>
+								</ul>
+								<li>PNG24, PNG32 ⇨ vectores con degradados, etc</li>
+								<ul>
+									<li>Más rápido que PNG8 sin paleta fija</li>
+									<li>Mas grande</li>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h3>Codificación elementos geográficos</h3>
+						<p>GeoJSON menos costoso de codificar/decodificar que XML (GML o KML, estándares OGC)</p>
+					</section>
+					<section>
+						<h3>Procedimientos</h3>
+						<p>Programas en cliente y/o servidor</p>
+						<ul>
+							<li>Buenas prácticas de codificación</li>
+							<li>Optimización de código</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Percepción de rendimiento</h3>
+						<ul>
+							<li>Clientes teselados ⇨ cuidado, sobrecarga servidor</li>
+							<li>Indicadores de proceso/carga</li>
+							<ul>
+								<li>Cargando capas...</li>
+								<li>Generando impresión...</li>
+								<li><img data-src="images/spin.gif" height="48" style="border:0px;background:none;box-shadow:none;vertical-align:middle"></li>
+							</ul>
+							<li>Tareas asincronas ⇨ poder seguir trabajando</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Cachés de mapas</h3>
+						<ul>
+							<li>Por qué generar continuamente imágenes de datos estáticos?</li>
+							<li>Imágenes pregeneradas para eliminar el coste de renderizado</li>
+						</ul>
+						<img data-src="images/cache.png" class="stretch" style="border:0px">
+						<br><small>© MapProxy</small>
+					</section>
+					<section>
+						<h3>Cachés de mapas</h3>
+						<ul>
+							<li>Pirámide de mallas ⇨ cada nivel corresponde a una escala</li>
+							<li>Todas las teselas tienen un tamaño fijo, generalmente 256x256</li>
+						</ul>
+						<img data-src="images/caches-levels.jpg" class="stretch" style="border:0px">
+						<br><small>© ESRI</small>
+					</section>
+					<section>
+						<h3>Cachés de mapas</h3>
+						<img data-src="images/caches-rendimiento.png" class="stretch" style="border:0px">
+						<br><small>© ESRI</small>
+						<p>Estándar OGC ⇨ WMTS</p>
+					</section>
+				</section
+
+				<!-- App sencilla -->
+				<section>
+					<section>
+						<h1>Ejemplo aplicación web sencilla</h1>
+						<h2>Incidencias de carreteras</h2>
+					</section>
+					<section>
+						<img data-src="images/incidencies.png" class="stretch" style="border:0px"><br></br>
+						<a href="http://www.conselldemallorca.net/sit/incidencies" target="_blank">Abrir...</a>
+					</section>
+					<section>
+						<img data-src="images/incidencies_mob.png" class="stretch" style="border:0px"><br></br>
+						<a href="http://www.conselldemallorca.net/sit/incidencies/mobile" target="_blank">Abrir...</a>
+					</section>
+					<section>
+						<h3>Gestor de incidencias</h3>
+						<img data-src="images/inc_adm1.png" class="stretch" style="border:0px">
+					</section>
+					<section>
+						<p>Localización mediante segmentación lineal</p>
+						<img data-src="images/inc_adm2.png" class="stretch" style="border:0px">
+					</section>
+					<section>
+						<p>Mapa sincronizado con los formularios</p>
+						<img data-src="images/inc_adm3.png" class="stretch" style="border:0px">
+					</section>
+					<section>
+						<p>Impresión de listados</p>
+						<img data-src="images/inc_adm4.png" class="stretch" style="border:0px">
+					</section>
+					<section>
+						<p>Tablas auxiliares ⇨ restricciones</p>
+						<img data-src="images/inc_adm5.png" class="stretch" style="border:0px">
+					</section>
+					<section>
+						<p>Tablas auxiliares ⇨ tipos</p>
+						<img data-src="images/inc_adm6.png" class="stretch" style="border:0px">
+					</section>
+					<section>
+						<p>Tablas auxiliares ⇨ correos avisos</p>
+						<img data-src="images/inc_adm7.png" class="stretch" style="border:0px">
+					</section>
+					<section>
+						<p>Modelo de datos</p>
+						<img data-src="images/inc_erd.png" class="stretch" style="border:0px">
+					</section>
+					<section>
+						<h3>Ejemplo aplicación GIS <b><q>sencilla</q></b> ?</h3>
+						<img data-src="images/ejemplo_app.png" class="stretch" style="border:0px">
+					</section>
+					<section data-background="images/iceberg.jpg">
+						<img data-src="images/tecno.png" class="stretch" style="border:0px">
+					</section>
+				</section>
+
+				<!-- Futuro -->
+				<section>
+					<section>
+						<h1>Presente y futuro del sector geoespacial</h1>
+					</section>
+					<section>
+						<h3>Formación continua</h3>
+						<ul>
+							<li>Cursos masivos online abiertos (MOOC)</li>
+							<ul>
+							<li><a href="https://www.coursera.org" target="_blank">Coursera</a>, 
+								<a href="https://www.miriadax.net" target="_blank">Miríada X</a>,
+								<a href="https://www.edx.org" target="_blank">edX</a>,
+								<a href="https://www.udacity.com" target="_blank">Udacity X</a>...
+							</li>
+							<li><a href="https://university.mongodb.com" target="_blank">MongoDB University</a></li>
+							</ul>
+						</ul>
+						<img data-src="images/coursera.png" class="stretch" style="border:0px">
+					</section>
+					<section>
+						<h3>Cloud computing</h3>
+						<img data-src="images/cloud.png" class="stretch" style="border:0px">
+						<br><small>© www.e-education.psu.edu/cloudGIS/cloud_introduction</small>
+					</section>
+					<section>
+						<h3>Cloud computing</h3>
+						<ul>
+							<li>PaaS ⇨ <a href="https://www.openshift.com" target="_blank">OpenShift</a>, <a href="https://www.heroku.com" target="_blank">Heroku</a>, <a href="https://www.247zilla.com" target="_blank">247zilla</a>...</li>
+							<li>SaaS ⇨ <a href="http://cartodb.com" target="_blank">CartoDB</a>, <a href="https://www.mapbox.com" target="_blank">MapBox</a>, <a href="http://www.arcgis.com" target="_blank">ArcGIS Online</a>...</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Proyectos de código abierto</h3>
+						<ul>
+							<li><a href="http://www.osgeo.org/home" target="_blank">Fundación OSGeo</a></li>
+							<li>Aplicaciones de escritorio ⇨ <a href="http://www.qgis.org/" target="_blank">QGIS</a>, <a href="http://www.gvsig.com/" target="_blank">gvSIG</a>...</li>
+							<li>Librerías de programación ⇨ <a href="http://www.gdal.org/" target="_blank">gdal/ogr</a>, <a href="http://www.geotools.org/" target="_blank">GeoTools</a>, <a href="http://geoscript.org/" target="_blank">GeoScript</a>, OpenLayers, <a href="http://leafletjs.com/" target="_blank">Leaflet</a>...</li>
+							<li>Bases de datos espaciales ⇨ <a href="http://postgis.net/" target="_blank">PostgreSQL/PostGIS</a>, <a href="https://www.gaia-gis.it/fossil/libspatialite" target="_blank">SQLite/SpatiaLite</a>, <a href="http://docs.mongodb.org/manual/applications/geospatial-indexes/" target="_blank">MongoDB</a>...</li>
+							<li>Servidores geoespaciales ⇨ <a href="http://geoserver.org/" target="_blank">GeoServer</a>, <a href="http://mapserver.org/" target="_blank">MapServer</a>...</li>
+							<li>Servidores de cachés ⇨ <a href="http://geowebcache.org/" target="_blank">GeoWebCache</a>, <a href="http://mapproxy.org/" target="_blank">MapProxy</a>...</li>
+							<li>Servidores de catálogos ⇨ <a href="http://geonetwork-opensource.org/" target="_blank">GeoNetwork</a>, <a href="http://pycsw.org/" target="_blank">pycsw</a>...</li>
+							<li>Datos geoespaciales ⇨ <a href="http://planet.openstreetmap.org/" target="_blank">OpenStreetMap</a></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Global Geospatial Information Management (<a href="http://ggim.un.org" target="_blank">UN-GGIM</a>)</h3>
+						<p><a href="http://ggim.un.org/docs/UN-GGIM%20tendencias%20a%20futuro-%20DEF.pdf" target="_blank">Informe</a> tendencias del sector (a 5-10 años vista)</p>
+						<ul>
+							<li>Aumento del uso de software libre</li>
+							<li>La información geoespacial (IG) bien público esencial</li>
+							<li>La tecnología por delante de los gobiernos y legisladores</li>
+							<li>Ganará importancia la IG voluntaria ⇨ OpenStreetMap</li>
+							<li>Aumento cantidad IG 3D y 4D, de sensores, de vehículos aéreos no tripulados (UAV)</li>
+							<li>Necesidad de herramientas (y personal especialista) para gestionar Big Data</li>
+							<li>Mejoras en el hardware, sobre todo, móvil (smartphones)</li>
+							<li>Tratamiento de IG mediante procesos automatizados</li>
+							<li>Nuevos roles y modelos de negocio para las agencias cartográficas</li>
+							<li>...</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Ampliar información</h2>
+					<ul>
+						<li>GIS for Web Developers. <i>Adding Where to Your Web Applications</i><br>
+						<small>Scott Davis. The Pragmatic Bookshelf, 2010</small></li>
+						<li>Sistemas de Información Geográfica<br>
+						<small>Víctor Olaya. <a href="http://wiki.osgeo.org/wiki/Libro_SIG" target="_blank">wiki.osgeo.org/wiki/Libro_SIG</a></small></li>
+						<li>The Geospatial Desktop<br>
+						<small>Gary Sherman, Tyler Mitchell. Locate Press, 2012</small></li>
+						<li>Web GIS. <i>Principles and Applications</i><br>
+						<small>Pinde Fu, Jiulin Sun. Esri Press, 2010</small></li>
+						<li>OpenStreetMap. <i>Using and Enhancing the Free Map of the World</i><br>
+						<small>Frederik Ramm, Jochen Topf. UIT Cambridge Ltd, 2010</small></li>
+						<li>Web Mapping Illustrated. <i>Using Open Source GIS Toolkits</i><br>
+						<small>Tyller Mitchell. O'Reilly Media, 2005</small></li>
+					</ul>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			Reveal.initialize({
+				width: 1200,
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				//previewLinks: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+		</script>
+
+	</body>
+</html>
