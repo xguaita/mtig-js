@@ -454,4 +454,4 @@ function ClickCarta() {
 }
 ```
 
-Código fuente del proyecto <a href="https://github.com/xguaita/mtig-js/tree/gh-pages/modulo6/jquery/memory/" target="_blank">aquí</a>. 
+Código fuente del proyecto <a href="https://github.com/xguaita/mtig-js/tree/gh-pages/src/modulo6/jquery/memory" target="_blank">aquí</a>. 
