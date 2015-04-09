@@ -333,9 +333,9 @@ function RobotArreglaTodo(nombre) {
   this.tipo= 'arreglatodo';
 };
 
-RobotArreglaTodo.prototype= Object.create(Robot.prototype);
+RobotArreglaTodo.prototype= new Robot(); // Herencia;
 
-RobotArreglaTodo.constructor= Robot;
+RobotArreglaTodo.prototype.constructor= RobotArreglaTodo;
 
 RobotArreglaTodo.prototype.arreglar= function(item) {
   if (this.estado === 1) {
@@ -352,9 +352,9 @@ function RobotTraductor(nombre) {
   this.tipo= 'traductor';
 };
 
-RobotTraductor.prototype= Object.create(Robot.prototype);
+RobotTraductor.prototype= new Robot(); // Herencia;
 
-RobotTraductor.constructor= Robot;
+RobotTraductor.prototype.constructor= RobotTraductor;
 
 RobotTraductor.prototype.traducir= function(texto) {
   if (this.estado === 1) {
@@ -369,7 +369,7 @@ RobotTraductor.prototype.traducir= function(texto) {
 var R2D2= new RobotArreglaTodo('R2D2'),
     C3PO= new RobotTraductor('C3PO');
 ```
-<a href="http://repl.it/4bl" target="_blank">repl.it</a>
+<a href="http://repl.it/4bl/5" target="_blank">repl.it</a>
 
 Seguimos teniendo algunos problemillas:
 
@@ -392,7 +392,7 @@ RobotTraductor.prototype.ayuda= function() {
   } else console.log(this.nombre + ': Piiiip');
 };
 ```
-<a href="http://repl.it/4bl/1" target="_blank">repl.it</a>
+<a href="http://repl.it/4bl/6" target="_blank">repl.it</a>
 
 Ya sólo nos queda un detalle. Nada nos impide realizar la siguiente acción:
 
@@ -441,9 +441,9 @@ function RobotArreglaTodo(nombre) {
   }
 };
 
-RobotArreglaTodo.prototype= Object.create(Robot.prototype);
+RobotArreglaTodo.prototype= new Robot(); // Herencia;
 
-RobotArreglaTodo.constructor= Robot;
+RobotArreglaTodo.prototype.constructor= RobotArreglaTodo;
 
 RobotArreglaTodo.prototype.arreglar= function(item) {
   if (this.estado === 1) {
@@ -463,9 +463,9 @@ function RobotTraductor(nombre) {
   }
 };
 
-RobotTraductor.prototype= Object.create(Robot.prototype);
+RobotTraductor.prototype= new Robot(); // Herencia;
 
-RobotTraductor.constructor= Robot;
+RobotTraductor.prototype.constructor= RobotTraductor;
 
 RobotTraductor.prototype.traducir= function(texto) {
   if (this.estado === 1) {
@@ -486,10 +486,10 @@ RobotTraductor.prototype.ayuda= function() {
 var R2D2= new RobotArreglaTodo('R2D2'),
     C3PO= new RobotTraductor('C3PO');
 ```
-<a href="http://repl.it/4bm" target="_blank">repl.it</a>
+<a href="http://repl.it/4bm/5" target="_blank">repl.it</a>
 
   > **Ejercicio:** necesitamos robots de combate. Definir una subclase `RobotCombate` con las siguientes características: deben `atacar` y `defender` activándose automáticamente; y estos robots no ayudan.   
-  > <a href="http://repl.it/5XD" target="_blank">Respuesta</a>
+  > <a href="http://repl.it/5XD/1" target="_blank">Respuesta</a>
 
 
 ### _property-chain_

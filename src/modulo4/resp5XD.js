@@ -34,9 +34,9 @@ function RobotArreglaTodo(nombre) {
   };
 }
 
-RobotArreglaTodo.prototype= Object.create(Robot.prototype);
+RobotArreglaTodo.prototype= new Robot(); // Herencia;
 
-RobotArreglaTodo.constructor= Robot;
+RobotArreglaTodo.prototype.constructor= RobotArreglaTodo;
 
 RobotArreglaTodo.prototype.arreglar= function(item) {
   if (this.estado === 1) {
@@ -56,9 +56,9 @@ function RobotTraductor(nombre) {
   };
 }
 
-RobotTraductor.prototype= Object.create(Robot.prototype);
+RobotTraductor.prototype= new Robot(); // Herencia;
 
-RobotTraductor.constructor= Robot;
+RobotTraductor.prototype.constructor= RobotTraductor;
 
 RobotTraductor.prototype.traducir= function(texto) {
   if (this.estado === 1) {
@@ -84,9 +84,9 @@ function RobotCombate(nombre) {
   };
 }
 
-RobotCombate.prototype= Object.create(Robot.prototype);
+RobotCombate.prototype= new Robot(); // Herencia
 
-RobotCombate.constructor= Robot;
+RobotCombate.prototype.constructor= RobotCombate;
 
 RobotCombate.prototype.atacar= function(texto) {
   if (this.estado === 0) this.activar();
