@@ -111,3 +111,5 @@ Mapas interactivos: OpenLayers 3
   Kevlin Henney. 2010 O’Reilly Media   
 + **Code Complete, Second Edition**  
   Steve McConnell. 2004 Microsoft Press   
++ <a href="http://www.jstherightway.org" target="_blank">**JavaScript: The Right Way**</a>  
+  William Oliveira
