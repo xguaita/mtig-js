@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Qué es Javascript
+desc: Qué es Javascript. Programación con Javascript - Máster en tecnologías de la información geográfica (MTIG 17). UAB
 folder: modulo1
 ---
 

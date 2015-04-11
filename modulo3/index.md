@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Objetos predefinidos, arrays y funciones
+desc: Objetos predefinidos, arrays y funciones. Programación con Javascript - Máster en tecnologías de la información geográfica (MTIG 17). UAB
 folder: modulo3
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: JQuery
+desc: JQuery. Programación con Javascript - Máster en tecnologías de la información geográfica (MTIG 17). UAB
 folder: modulo6/jquery
 ---
 

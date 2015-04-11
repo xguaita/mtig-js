@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Javascript en el navegador
+desc: Javascript en el navegador. Programación con Javascript - Máster en tecnologías de la información geográfica (MTIG 17). UAB
 folder: modulo5
 ---
 

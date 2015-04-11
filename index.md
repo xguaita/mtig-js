@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Inicio
+desc: Introducción a la programación con JavaScript. Programación con Javascript - Máster en tecnologías de la información geográfica (MTIG 17). UAB
 ---
 
 # Introducción a la programación con JavaScript

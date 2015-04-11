@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Programación orientada a objetos
+desc: Programación orientada a objetos. Programación con Javascript - Máster en tecnologías de la información geográfica (MTIG 17). UAB
 folder: modulo4
 ---
 

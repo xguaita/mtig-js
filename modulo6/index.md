@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Más fácil con librerías
+desc: Más fácil con librerías. Programación con Javascript - Máster en tecnologías de la información geográfica (MTIG 17). UAB
 folder: modulo6
 ---
 

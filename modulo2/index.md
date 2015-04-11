@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Introducción al lenguaje de programación
+desc: Introducción al lenguaje de programación. Programación con Javascript - Máster en tecnologías de la información geográfica (MTIG 17). UAB
 folder: modulo2
 ---
 

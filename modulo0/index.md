@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Introducción a los clientes web geoespaciales
+desc: Introducción a los clientes web geoespaciales. Programación con Javascript - Máster en tecnologías de la información geográfica (MTIG 17). UAB
 folder: modulo0
 ---
 

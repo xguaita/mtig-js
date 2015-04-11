@@ -1,6 +1,7 @@
 ---
 layout: default
 title: OpenLayers
+desc: OpenLayers 3. Programación con Javascript - Máster en tecnologías de la información geográfica (MTIG 17). UAB
 folder: modulo6/openlayers
 ---
 
