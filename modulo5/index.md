@@ -156,7 +156,7 @@ Todos los componentes del documento son _nodos_ en el árbol, cada tag html es u
 + Buscar elementos  
 + Modificar el documento
 
-Vamos a _ver_ el DOM utilizando las herramientas para desarrolladores que implementan los navegadores (generalmente la pestaña _elements_). <a href="{{ site.baseurl }}src/modulo5/ejemplo.html" target="_blank">Abrir ejemplo en el navegador...</a>
+Vamos a _ver_ el DOM utilizando las herramientas para desarrolladores que implementan los navegadores (generalmente la pestaña _elements_). <a href="{{ site.baseurl }}/src/modulo5/ejemplo.html" target="_blank">Abrir ejemplo en el navegador...</a>
 
 ### Navegar (moverse) por el DOM
 La raiz del documento es `document.documentElement` y de cuerpo del documento `document.body`. Este último puede devolver `null` si no hay cuerpo de documento.
@@ -515,4 +515,4 @@ function evalResp(resp) {
 }
 ```
 
-<a href="{{ site.baseurl }}src/modulo5/ajax.html" target="_blank">Abrir ejemplo en el navegador...</a>
+<a href="{{ site.baseurl }}/src/modulo5/ajax.html" target="_blank">Abrir ejemplo en el navegador...</a>

@@ -10,12 +10,10 @@ relative_permalinks: true
 
 # Setup
 title:            'MTIG JS'
-tagline:          'MTIG JS'
+tagline:          'MTIG 17'
 description:      'Programación con JavaScript'
 url:              http://xguaita.github.io/mtig-js
-baseurl:          http://xguaita.github.io/mtig-js/
-#url:              
-#baseurl:          /
+baseurl:          /mtig-js
 
 author:
   name:           'Xisco Guaita'

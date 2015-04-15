@@ -61,7 +61,7 @@ La sintaxis básica de JQuery es ```$(selector).accion()```, seleccionar element
 ## Seleccionar elementos
 Para poder manipular los elementos de una página web primero debemos <a href="http://api.jquery.com/category/selectors/" target="_blank">seleccionarlos</a>. JQuery utiliza <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors" target="_blank">selectores CSS</a> para recuperar elementos del DOM.
 
-Vamos a cargar el fichero html <a href="http://rawgit.com/xguaita/curso-javascript/master/JQuery/ejercicios-jquery.html" target="_blank">ejercicios-jquery.html</a> en el navegador y abrimos la consola javascript.
+Vamos a cargar el fichero html <a href="{{ site.baseurl }}/src/modulo6/jquery/ejercicios-jquery.html" target="_blank">ejercicios-jquery.html</a> en el navegador y abrimos la consola javascript.
 
 ### Por ID
 El atributo _id_ de un elemento del DOM debe ser único en la página.
@@ -204,14 +204,14 @@ function getWeather() {
   });
 }
 ```
-<a href="{{ site.baseurl }}src/modulo6/jquery/ajax.html" target="_blank">Abrir ejemplo en el navegador...</a>
+<a href="{{ site.baseurl }}/src/modulo6/jquery/ajax.html" target="_blank">Abrir ejemplo en el navegador...</a>
 
 ## Proyecto Memory
 Juego de cartas boca abajo donde hay que recordar la posición e ir haciendo parejas. En esta versión en lugar de imágenes se utilizan las tablas de multiplicar y se tienen como máximo 40 intentos para hacer las 10 parejas. Cada vez que se empieza un juego se selecciona aleatóriamente el valor del multiplicando entre 2 y 9.
 
 ![](./images/memory.png)
 
-  <a href="{{ site.baseurl }}src/modulo6/jquery/memory/index.html" target="_blank">Jugar...</a>
+  <a href="{{ site.baseurl }}/src/modulo6/jquery/memory/index.html" target="_blank">Jugar...</a>
 
 ### Paso a paso
 La resolución del juego básicamente consiste en:
