@@ -37,7 +37,7 @@ En estos últimos años:
 
 ## Ventajas de javascript
   + Es uno de los lenguajes de programación más usados del momento. El primero en la programación de clientes web  
-  ![Uso lenguajes programación](./images/lang-rank-614-wm1.png)
+  ![Uso lenguajes programación](./images/lang-rank.png)
   
   + Aplicaciones de escritorio, programación de servidores, dispositivos móviles, bases de datos
   
