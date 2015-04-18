@@ -26,6 +26,8 @@ En el 2000 Microsoft añade la tecnología que posibilitará las técnicas **Aja
 
 En 2004 Google lanza Gmail revolucionando la forma de diseñar aplicaciones web. Aplicación de una sola página (_single page application_, SPA) que aprovecha al máximo la tecnología Ajax y consigue una velocidad y adaptabilidad inédita hasta la época.
 
+El pasado 14 de abril se presenta a ECMA el borrador final (rev 38) de <a href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts#final_draft" target="_blank">ECMA-262 6th Edition</a>, _The 2015 ECMAScript Language Specification_ para su revisión y aprovación (previsiblemente junio de 2015).
+
 En estos últimos años:  
 
   + Aplicaciones JavaScript en el servidor mediante <a href="http://nodejs.org" target="_blank">Node.js</a>, <a href="http://expressjs.com" target="_blank">Express</a>, <a href="http://mcavage.me/node-restify" target="_blank">node-restify</a>...  

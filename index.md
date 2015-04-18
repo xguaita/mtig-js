@@ -36,7 +36,10 @@ Por una parte debemos memorizar la sintaxis y la semántica del lenguaje de prog
 
 ![Programar](./images/programar.png)
 
-  > Programar no es sencillo, y el que diga lo contrario miente  
+  > El desarrollo de software ha sido, es, y probablemente será, fundamentalmente difícil  
+  > - Grady Booch
+
+  > ... Y el que diga lo contrario miente  
   > - Xisco G
 
 
