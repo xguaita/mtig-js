@@ -205,7 +205,7 @@ var C3PO= {
 
 Tenemos que crear 100 objetos robot con todas sus características? Qué pasa si hemos de modificar un método, lo hemos de cambiar 100 veces? NO, y aquí es donde introducimos el concepto de _clase_.
 
-  > **Nota:** recordar que en JavaScript no existe la _clase_ como un componente del lenguaje. En JavaScript se puden definir _clases_ mediante funciones (denominadas _constructores_)
+  > **Nota:** recordar que en JavaScript no existe la _clase_ como un componente del lenguaje. En JavaScript se pueden definir _clases_ mediante funciones (denominadas _constructores_)
 
 Para definir _clases_ mediante _constructores_ antes debemos introducir el concepto de **prototipo**.
 
