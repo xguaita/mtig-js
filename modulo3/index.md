@@ -243,6 +243,7 @@ Recorrer los elementos del array:
 ```js
 var a= ['azul', 'rojo', 'verde', 'amarillo'];
 for (var i= 0; i < a.length; i++) console.log(a[i]);
+for (i in a) console.log(a[i]);
 ```
 <a href="http://repl.it/4L2/3" target="_blank">repl-it</a>
 
