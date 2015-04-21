@@ -153,7 +153,7 @@ Algunas propiedades y métodos del objeto `Math`:
 | `sqrt(x)` | Raiz cuadrada |  
 | `pow(x,y)` | x<sup>y</sup> |  
 | `round(x)` | Redondea a entero |  
-| `random()` | Genera un un número aleatorio entre 0 y 1 |  
+| `random()` | Genera un un número aleatorio entre [0 y 1) |  
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">Ampliar información...</a>
 
@@ -167,7 +167,7 @@ console.log('Raiz cuadrada de 100:', Math.sqrt(100));
 <a href="http://repl.it/4Ko" target="_blank">repl-it</a>
 
   > **Ejercicio:** simular la tirada de una moneda, cara o cruz?  
-  > <a href="http://repl.it/4Kq" target="_blank">Respuesta</a>
+  > <a href="http://repl.it/4Kq/1" target="_blank">Respuesta</a>
 
 ## El objeto Array  
 Un array es una colección **ordenada** de elementos (valores). Cada elemento tiene una posición denominada índice. El primer elemento tienen índice 0. Los elementos del array pueden ser de cualquier tipo (datos primitivos, objetos, arrays...), y dentro del array puede haber elementos de diferentes tipos. Se accede a los elementos por su índice mediante corchetes `[]`.
