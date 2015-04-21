@@ -401,7 +401,7 @@ do {
 El bucle `for` simplifica el código de las iteraciones que siguen un patrón: aquellas que inicializan una contador (variable), comprueban su valor para seguir iterando y, finalmente, incrementan el contador. Justamente nuestro ejemplo. 
 
 ```js
-for (inicializacion; test; iteracion) {
+for (inicializacion; test; actualizacion) {
   ...
 }
 ```
