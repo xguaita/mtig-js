@@ -81,7 +81,7 @@ JSON y Ajax
 
 ### [Más fácil con librerías](./modulo6/)
 Independencia del navegador y simplificación de acceso a objetos: JQuery  
-Mapas interactivos: OpenLayers 3
+Mapas interactivos: Leaflet
 
 
 ## Ampliar información
@@ -105,12 +105,12 @@ Mapas interactivos: OpenLayers 3
   David Sawyer McFarland. 2012 O’Reilly Media  
 + **Head First jQuery**  
   Ryan Benedetti y Ronan Cranley. 2011 O’Reilly Media  
-+ **OpenLayers Cookbook** (2.10)  
-  Antonio Santiago. 2012 Packt Publishing  
-+ **The book of OpenLayers 3. Theory & Practice**  
-  Antonio Santiago. 2014 Leanpub  
-+ **OpenLayers 3: Beginner's Guide**  
-  Thomas Gratier, Paul Spencer, Erik Hazzard. 2015 Packt Publishing  
++ **Instant Interactive Map designs with Leaflet JavaScript Library How-to**  
+  Jonathan Derrough. 2013 Packt Publishing  
++ **Leaflet.js Essentials**  
+  Paul Crickard. 2014 Packt Publishing  
++ **Leaflet Tips and Tricks**  
+  Malcolm Maclean. 2014 Leanpub. <a href="https://leanpub.com/leaflet-tips-and-tricks/read" target="_blank">Leer online</a>  
 + **97 Things Every Programmer Should Know**  
   Kevlin Henney. 2010 O’Reilly Media   
 + **Code Complete, Second Edition**  

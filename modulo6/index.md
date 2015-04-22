@@ -29,5 +29,5 @@ Vamos a estudiar las siguientes librerías:
 ### [JQuery](./jquery/)
 Independencia del navegador y simplificación de acceso a objetos del DOM
 
-### [Openlayers 3](./openlayers/)
+### [Leaflet](./leaflet/)
 Mapas interactivos
