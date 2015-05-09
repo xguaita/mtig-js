@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello Map</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <style type="text/css">
+    .mapas {
+      width: 600px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div id="miMapa" class="mapas"></div>
+
+  <script>
+    // Crea un mapa y inicializa su posición y escala
+    var map = L.map('miMapa').setView([39.57, 3.0], 8);
+
+    // Crea capa openstreetmap y la añade al mapa
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
+    }).addTo(map);
+  </script>
+</body>
+</html>
