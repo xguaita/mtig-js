@@ -1,3 +1,4 @@
 _site
 *.db
 /jekyll-serve.cmd
+/codepen/

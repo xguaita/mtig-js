@@ -149,7 +149,7 @@ Un control de gestión de capas (<a href="http://leafletjs.com/reference.html#co
 
 Veamos un ejemplo:
 
-<p data-height="550" data-theme-id="0" data-slug-hash="Kpdxya" data-default-tab="result" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/Kpdxya/'>Leaflet layer control</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="550" data-theme-id="0" data-slug-hash="Kpdxya" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/Kpdxya/'>Leaflet layer control</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 ## Las Capas
@@ -184,37 +184,8 @@ L.tileLayer(urlTemplate, options?)
 
 Existe un _plugin_ <a href="https://github.com/leaflet-extras/leaflet-providers" target="_blank">leaflet-providers</a> que proporciona configuraciones de muchos proveedores de _tiles_. Dispone de un <a href="http://leaflet-extras.github.io/leaflet-providers/preview/index.html" target="_blank">mapa</a> de muestra donde se pueden ver todas las capas disponibles con su denominación (si se utiliza el plugin) y su configuración (si no se utiliza). El ejemplo anterior utilizando este _plugin_ quedaría así:
 
-<div data-height="554" data-theme-id="0" data-slug-hash="XbmvrM" data-default-tab="js" data-user="xguaita" class='codepen'><pre><code>// Crea un mapa y inicializa su posición y escala
-var map = L.map(&#x27;miMapa&#x27;, {
-  maxZoom: 7
-}).setView([39.57, 3.0], 6);
-
-// Crea capa openstreetmap
-var osm = L.tileLayer.provider(&#x27;OpenStreetMap.Mapnik&#x27;).addTo(map);
-
-// Crea capa stamen lite
-var lite = L.tileLayer.provider(&#x27;Stamen.TonerLite&#x27;);
-
-// Crea capa imagen de esri
-var esri_img = L.tileLayer.provider(&#x27;Esri.WorldImagery&#x27;);
-
-// Crea capa OpenWeatherMap nubes
-var owm_clouds = L.tileLayer.provider(&#x27;OpenWeatherMap.Clouds&#x27;);
-
-// Crea capa OpenWeatherMap presión
-var owm_pressure_cntr = L.tileLayer.provider(&#x27;OpenWeatherMap.PressureContour&#x27;);
-
-// Crea control de capas
-L.control.layers({ // Capas base
-  &quot;OpenStreetMap&quot;: osm,
-  &quot;Stamen toner-lite&quot;: lite,
-  &quot;Satélite&quot;: esri_img
-}, { // Capas de superposición
-	&quot;OpenWeatherMap nubes&quot;: owm_clouds,
-  &quot;OpenWeatherMap presión&quot;: owm_pressure_cntr
-}).addTo(map);</code></pre>
-<p>See the Pen <a href='http://codepen.io/xguaita/pen/XbmvrM/'>Leaflet leaflet-providers plugin</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<p data-height="550" data-theme-id="0" data-slug-hash="XbmvrM" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/XbmvrM/'>Leaflet leaflet-providers plugin</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 Mediante el objeto <a href="http://leafletjs.com/reference.html#layergroup" target="_blank">LayerGroup</a> se pueden agrupar capas.
 
@@ -238,12 +209,12 @@ L.tileLayer.wms(urlWMS, options)
 + _urlWMS_ url del servicio WMS, consultar directorios de servicios de las Infraestructuras de Datos Espaciales (IDE), como por ejemplo la <a href="http://www.idee.es/web/guest/directorio-de-servicios" target="_blank">IDEE</a>  
 + _options_, define la configuración WMS de la capa  
 
-<p data-height="552" data-theme-id="0" data-slug-hash="JdYgwe" data-default-tab="result" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/JdYgwe/'>Leaflet WMS</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="552" data-theme-id="0" data-slug-hash="JdYgwe" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/JdYgwe/'>Leaflet WMS</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 Los servicios WMS pueden servir la información en los sistemas de referencia que consideren oportuno; pero deben servir las capas, como mínimo, en WGS84 coordenadas geográficas (epsg:4326). Veamos un ejemplo:
 
-<p data-height="550" data-theme-id="0" data-slug-hash="rVxBwo" data-default-tab="result" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/rVxBwo/'>Leaflet WMS epsg:4326</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="550" data-theme-id="0" data-slug-hash="rVxBwo" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/rVxBwo/'>Leaflet WMS epsg:4326</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
   > **Nota:** existe un _plugin_ con funcionalidad avanzada WMS, <a href="https://github.com/heigeo/leaflet.wms" target="_blank">leaflet.wms</a>
@@ -263,7 +234,7 @@ L.tileLayer.wms(urlImagen, bbox, options)
 + _bbox_, coordenadas sur, oeste, norte y este de la imagen  
 + _options_, define la configuración de la capa  
 
-<p data-height="578" data-theme-id="0" data-slug-hash="zGrGeg" data-default-tab="result" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/zGrGeg/'>Leaflet ImageOverlay</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="578" data-theme-id="0" data-slug-hash="zGrGeg" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/zGrGeg/'>Leaflet ImageOverlay</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 ### Capas vectoriales
@@ -271,15 +242,15 @@ Además de visualizar capas de información geográfica en formato imagen (rást
 
 Leaflet tiene una particular manera de definir las capas vectoriales. Cada tipo de geometría básico es un tipo de capa; capas de un único elemento:
 
-+ <a href="http://leafletjs.com/reference.html#circlemarker" target="_blank">CircleMarker</a>: representar elementos puntuales mediante círculos. Para utilizar iconos debemos emplear las marcas (<a href="http://leafletjs.com/reference.html#marker" target="_blank">Marker</a>)  
++ <a href="http://leafletjs.com/reference.html#circlemarker" target="_blank">CircleMarker</a>: representar elementos puntuales mediante círculos. Para utilizar iconos debemos emplear marcas (<a href="http://leafletjs.com/reference.html#marker" target="_blank">Marker</a>) y si queremos cambiar su aspecto por defecto el objeto <a href="http://leafletjs.com/reference.html#icon" target="_blank">Icon</a>   
 + <a href="http://leafletjs.com/reference.html#polyline" target="_blank">Polyline</a> y <a href="http://leafletjs.com/reference.html#multipolyline" target="_blank">MultiPolyline</a>: representar líneas  
 + <a href="http://leafletjs.com/reference.html#polygon" target="_blank">Polygon</a> y <a href="http://leafletjs.com/reference.html#multipolygon" target="_blank">MultiPolygon</a>: representar polígonos  
 + <a href="http://leafletjs.com/reference.html#rectangle" target="_blank">Rectangle</a> y <a href="http://leafletjs.com/reference.html#circle" target="_blank">Circle</a> para dibujar rectángulos y círculos, respectivamente  
 
-<p data-height="551" data-theme-id="0" data-slug-hash="xGZwer" data-default-tab="result" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/xGZwer/'>Leaflet vector layers</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="551" data-theme-id="0" data-slug-hash="xGZwer" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/xGZwer/'>Leaflet vector layers</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-Para poder tener más de un elemento en las misma capa, y que compartan estilo y popups, Leaflet define <a href="http://leafletjs.com/reference.html#featuregroup" target="_blank">FeatureGroup</a> para poder agrupar geometrías.
+Para poder tener más de un elemento en la misma capa, y que compartan estilo y popups, Leaflet define <a href="http://leafletjs.com/reference.html#featuregroup" target="_blank">FeatureGroup</a> para poder agrupar geometrías.
 
   > **Ejercicio:** Eliminar (borrar) las 3 capas del ejemplo anterior y sustituirlas por una capa de grupo a la que añadiremos un popup.
  
@@ -322,17 +293,94 @@ Leaflet define la capa <a href="http://leafletjs.com/reference.html#geojson" tar
 
  > **Nota:** uno de los objetivos de diseño de Leaflet es la simplicidad por un lado, y realizar de forma muy eficiente las tareas mínimas necesarias por otro. Por ello, el núcleo no implementa funciones para cargar datos (GeoJSON) de servidores; debemos utilizar herramientas externas a Leaflet para ello, por ejemplo JQuery
 
-<p data-height="551" data-theme-id="0" data-slug-hash="gpPPoV" data-default-tab="result" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/gpPPoV/'>Leaflet GeoJSON</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="551" data-theme-id="0" data-slug-hash="gpPPoV" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/gpPPoV/'>Leaflet GeoJSON</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
   > **Nota:** en ocasiones necesitamos localizar un conjunto de elementos sobre un mapa. La opción más sencilla es crear un fichero GeoJSON con estos elementos. Si sabemos sus coordenadas es muy sencillo, únicamente necesitamos un editor de texto.
   
   > Si no sabemos las coordenadas podemos utilizar aplicaciones GIS de escritorio como <a href="http://www.qgis.org/" target="_blank">QGIS</a> o <a href="http://www.gvsig.org/" target="_blank">gvSIG</a>, ambas de código abierto, o cualquiera de las opciones comerciales. Todas ellas requieren conocimientos de base en sistemas de información geográfica.
   
-  > Una alternativa sencilla sin requisitos previos es <a href="http://geojson.io/" target="_blank">geojson.io</a>.
+  > Una alternativa sencilla sin requisitos previos es <a href="http://geojson.io" target="_blank">geojson.io</a>.
 
+## _Plugins_
+Toda la funcionalidad que no ofrece Leaflet por defecto la podemos encontrar en la gran cantidad de <a href="http://leafletjs.com/plugins.html" target="_blank">_plugins_</a> de terceros que se han escrito. Una prueba más de la aceptación que ha tenido la librería estos últimos años.
 
+Para utilizar _plugins_ debemos descargarlos y guardarlos en un lugar accesible a nuestra aplicación web.
 
+Veamos algunos ejemplos.
 
+### MiniMap
+Este es uno de esos _plugins_ que debería formar parte del núcleo de Leaflet. <a href="https://github.com/Norkart/Leaflet-MiniMap" target="_blank">MiniMap</a> define un mapa guía que muestra la posición de la vista del mapa principal.
 
+<p data-height="552" data-theme-id="0" data-slug-hash="EjPmMq" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/EjPmMq/'>Leaflet MiniMap</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
+### Awesome-Markers
+El _plugin_ <a href="https://github.com/lvoogdt/Leaflet.awesome-markers" target="_blank">Awesome-Markers</a> define marcas de diferentes colores con iconos de ficheros de fuentes:
+
++ <a href="http://getbootstrap.com/components" target="_blank">Bootstrap Glyphicons</a> (por defecto)  
++ <a href="http://fortawesome.github.io/Font-Awesome/icons" target="_blank">Font Awesome</a>  
++ <a href="http://ionicons.com" target="_blank">Ionicons</a>  
++ Cualquier fichero de fuentes  
+
+El ejemplo de senderismo con Awesome-Markers:
+
+<p data-height="537" data-theme-id="0" data-slug-hash="ZGQyWd" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/ZGQyWd/'>Leaflet Awesome-Markers</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+### MarkerCluster
+Cuando necesitamos mostrar gran cantidad de puntos los navegadores empiezan a disminuir su rendimiento y se nota una falta de responsividad. Además, en niveles de zoom bajos (escalas pequeñas) la acumulación de puntos hace que estéticamente el mapa no resulte atractivo.
+
+Podemos solucionar el problema mostrando los datos únicamente en escalas más grandes, donde se reducirá el número de puntos.
+
+Pero en ocasiones nos interesará mostrar todos los puntos en todos los niveles de zoom, para ello tendremos que utilizar técnicas de agrupamiento (_clustering_). El _plugin_ <a href="https://github.com/Leaflet/Leaflet.markercluster" target="_blank">MarkerCluster</a> es el mejor en esta área.
+
+<p data-height="553" data-theme-id="0" data-slug-hash="mJVwwp" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/mJVwwp/'>Leaflet MarkerCluster</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+### Heatmaps
+Siguiendo con el problema anterior, gran cantidad de puntos, en ocasiones nos interesará mostrarlos como mapas de calor para resaltar las _zonas calientes_.
+
+<a href="https://github.com/Leaflet/Leaflet.heat" target="_blank">Leaflet.heat</a> es un _plugin_ muy simple que nos permite generar _heatmaps_ con un rendimiento muy bueno.
+
+<p data-height="550" data-theme-id="0" data-slug-hash="qdORJp" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/qdORJp/'>Leaflet heatmap</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+### ESRI
+La propia ESRI ha escrito un _plugin_ para acceder a sus servicios de ArcGIS (desde la versión 10), <a href="http://esri.github.io/esri-leaflet/" target="_blank">Esri Leaflet</a>.
+
+ > **Nota:** actualmente está en fase de desarrollo (_release candidate_)
+
+<p data-height="550" data-theme-id="0" data-slug-hash="RPrjag" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/RPrjag/'>Leaflet ESRI plugin</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+### FileLayer
+El _plugin_ <a href="https://github.com/makinacorpus/Leaflet.FileLayer" target="_blank">FileLayer</a> carga al mapa ficheros KML, GPX y GeoJSON desde el almacenamiento local.
+
+<p data-height="551" data-theme-id="0" data-slug-hash="jPWaGJ" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/jPWaGJ/'>Leaflet FileLayer</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+### GeoLocalización
+Aunque Leaflet implementa la funcionalidad básica de geolocalización, el _plugin_ <a href="https://github.com/domoritz/leaflet-locatecontrol" target="_blank">Leaflet.Locate</a> define un control que simplifica las tareas de localización y seguimiento.
+
+<p data-height="551" data-theme-id="0" data-slug-hash="QbyOmP" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/QbyOmP/'>Leaflet Localte</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+### Dibujar/editar elementos
+<a href="https://github.com/Leaflet/Leaflet.draw" target="_blank">Leaflet.draw</a> es un control de edición de geometrías altamente configurable:
+
++ Tipos de geometría a editar  
++ Simbolización  
++ Configuración del toolbar  
++ Idioma de los textos  
+
+ > **Nota:** este control **únicamente** edita las geometrías en el mapa, es responsabilidad del programador guardar los cambios en local (IndexedDB, WebStorage) o remoto (enviándolos a un servidor)
+
+<p data-height="551" data-theme-id="0" data-slug-hash="NqxwLJ" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/NqxwLJ/'>Leaflet Draw</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+### Estilos elementos
+Otro _plugin_, <a href="https://github.com/dwilhelm89/Leaflet.StyleEditor" target="_blank">Leaflet.StyleEditor</a>, presenta una interfaz de usuario sencilla para editar algunas de las opciones de simbolización de los distintos tipos de geometrías.
+
+<p data-height="550" data-theme-id="0" data-slug-hash="zGrpxZ" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/zGrpxZ/'>Leaflet Draw & StyleEditor</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
