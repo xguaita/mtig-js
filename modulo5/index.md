@@ -100,7 +100,7 @@ A través del  objeto `window` se accede al nuevo conjunto de _Web APIs_ definid
 + XMLHttpRequest: peticiones asincronas de información a servidores (Ajax)  
 + Geolocation API: permite al navegador acceder a la geolocalización del dispositivo  
 + Web Sockets API: conexión a servidores mediante _streams_ bidireccionales  
-+ IndexDB API: almacenar y recuperar objetos en bases de datos simples  
++ IndexedDB API: almacenar y recuperar objetos en bases de datos simples  
 + Filesystem API: lectura y escritura de ficheros  
 
 
