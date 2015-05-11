@@ -176,11 +176,11 @@ Formas de crear arrays:
 
 ```js
 var a= new Array(), // Array vacío
-    b= [],
+    b= [], // Array vacio
     c= new Array(20), // Array vacío de 20 elementos
-    d= [20],
+    d= [20], // Array de un elemento
     e= new Array(10, 20, 30, 40), // Array de 4 elementos
-    f= [10, 20, 30, 40];
+    f= [10, 20, 30, 40]; // Array de 4 elementos
 ```
 
 Acceso a los elementos del array:
