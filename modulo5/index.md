@@ -389,7 +389,7 @@ El objeto `XMLHttpRequest` se ve afectado por esta política de seguridad, por l
 Procedimientos más comunes para realizar peticiones a otros orígenes (y saltarse la política de seguridad):
 
 + Proxy: en el mismo origen ponemos un recurso (programa, servicio) que realizará las peticiones al exterior y devolverá la respuesta  
-+ JSONP (_JSON with padding_): se aprovecha de que se pueden cargar `<script src="..."></script>` de distintos orígenes para pedir al servidor la respesta JSON encerrada en una función de _callback_  
++ JSONP (_JSON with padding_): se aprovecha de que se pueden cargar `<script src="..."></script>` de distintos orígenes para pedir al servidor la respuesta JSON encerrada en una función de _callback_  
 + CORS (_Cross-Origin Resource Sharing_): técnica estandarizada que extiende el protocolo HTTP con una nueva cabecera de petición `Origin` (que indica el origen de la petición) y otra nueva de respuesta `Access-Control-Allow-Origin` (que indica que orígenes son válidos), según la cual el navegador actúa en consecuencia  
 
 
