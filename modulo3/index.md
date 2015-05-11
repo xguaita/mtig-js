@@ -218,7 +218,7 @@ Algunos métodos del objeto `Array`:
 | Método | Descripción |  
 | --------- | ----------- |  
 | `concat(array/valores)` | Junta los dos arrays y devuelve el resultado |  
-| `unshift(), push(valor)` | Añade un valor al principio y al final del array y devuelve la longitud, respectivamente |  
+| `unshift(valor), push(valor)` | Añade un valor al principio y al final del array y devuelve la longitud, respectivamente |  
 | `shift(), pop()` | Recupera y elimina un valor al principio y al final del array, respectivamente |  
 | `join(separador)` | Crea un string con los elementos del array |  
 | `slice(indice1, indice2)` | Extrae una sección del array |  
