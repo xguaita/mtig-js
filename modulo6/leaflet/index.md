@@ -10,6 +10,8 @@ folder: modulo6/leaflet
 
 Durante la transición de OpenLayers 2 a 3, que ha supuesto aproximadamente 2 años de trabajo (de 2011 a 2014), y gracias a su simplicidad se ha convertido en la librería de _web mapping_ preferida de los desarrolladores y proyectos fuera del área de conocimiento de los _sistemas de información geográfica_.
 
+ > **Nota:** existe un _plugin_ de QGIS, <a href="https://github.com/Geolicious/qgis2leaf" target="_blank">qgis2leaf</a>, para convertir un proyecto qgis en un mapa Leaflet para publicar en la web
+
 ### Características
 
 El objetivo del proyecto es mantener una lista de <a href="http://leafletjs.com/features.html" target="_blank">funcionalidades</a> básicas para mantener la librería simple y de reducido tamaño.
@@ -62,7 +64,7 @@ Dispone de <a href="http://leafletjs.com/examples.html" target="_blank">tutorial
 
 ### CodePen
 
-<a href="http://codepen.io" target="_blank">CodePen</a> es una herramienta de desarrollo web que permite a sus usuarios crear conjuntos de código `HTML`, `CSS` y `JavaScript` para demostraciones, educación, compartición de código...
+<a href="http://codepen.io" target="_blank">CodePen</a> es una herramienta de desarrollo web que permite a sus usuarios crear conjuntos de código `HTML`, `CSS` y `JavaScript` (_pens_) para demostraciones, educación, compartición de código...
 
 El primer mapa con Leaflet en CodePen:
 
@@ -111,12 +113,12 @@ Define propiedades y métodos para crear y manipular mapas:
   + Visibilidad de controles  
   + Animaciones de los cambios de vista  
   + Geolocalización  
-+ Propiedades: algunas características se pueden modificaren tiempo de ejecución  
++ Propiedades: algunas características que se pueden modificar en tiempo de ejecución  
 + Métodos:  
   + Modificar el estado: mover vista, cambiar el zoom, geolocalizar usuario...  
   + Recuperar estado: coordenadas, zoom, bbox...  
   + Controles y capas: añadir, eliminar, popups...  
-  + Conversiones: de pixels a coordenadas, reprojecciones
+  + Conversiones: de pixels a coordenadas, reproyecciones
 + Eventos: ratón, carga de capas, cambio zoom o vista, geolocalización...
 
   > **Ejercicio:** Seguiendo con el ejemplo anterior, modificar el mapa para que se comporte como un mapa fijo (no interactivo) que simplemente muestra la ubicación del LIGIT (nivel de zoom a 11):
@@ -145,7 +147,7 @@ Un control para mostrar la autoría de los datos y capas, <a href="http://leafle
 
 Un control de gestión de capas (<a href="http://leafletjs.com/reference.html#control-layers" target="_blank">Control.Layers</a>) que nos permite, de forma sencilla, configurar las capas base del mapa (mapa de fondo, sólo una capa visible en cada momento) y las de superposición (se visualizan sobre la capa base).
 
- Y un control que muestra la escala gráfica del mapa, <a href="http://leafletjs.com/reference.html#control-scale" target="_blank">Control.Scale</a>.
+Y un control que muestra la escala gráfica del mapa, <a href="http://leafletjs.com/reference.html#control-scale" target="_blank">Control.Scale</a>.
 
 Veamos un ejemplo:
 
@@ -154,7 +156,7 @@ Veamos un ejemplo:
 
 ## Las Capas
 
-Leaflet, como todas las librerías de _web mapping_, diferencia entre capas 2 tipos de capas, ráster y vectoriales. Las primeras visualizan imágenes, y las segundas trabajan con datos (puntos, líneas o polígonos) y los visualizan mediante estilos.
+Leaflet, como todas las librerías de _web mapping_, diferencia entre 2 tipos de capas: ráster y vectoriales. Las primeras visualizan imágenes, y las segundas trabajan con datos (puntos, líneas o polígonos) y los visualizan mediante estilos.
 
 ### Capas ráster
 
@@ -167,9 +169,9 @@ El núcleo de Leaflet define 3 tipos:
 Mediante _plugins_ se puede acceder a más tipos de capas: WMTS, ArcGIS Rest...
 
 #### TileLayer
-Todos los mapas que hemos generado hasta el momento han utilizado este tipo de capa. Cargan _tiles_ de los diferentes servicios de publicación (libres o de pago) disponibles, la mayoría renderizan el mapa a partir de la base de datos de OpenStreetMap o imágenes satélite.
+Todos los mapas que hemos generado hasta el momento han utilizado este tipo de capa. Cargan _tiles_ de los diferentes servicios de publicación disponibles (libres o de pago), la mayoría renderizan el mapa a partir de la base de datos de OpenStreetMap o imágenes satélite.
 
- > **Nota:** Un buen sitio para empezar si teneis interés en crear vuestro propio servicio mapas a partir de la base de datos de OpenStreetMap es <a href="https://switch2osm.org" target="_blank">switch2osm</a>
+ > **Nota:** Un buen sitio para empezar si teneis interés en crear vuestro propio servicio de mapas a partir de la base de datos de OpenStreetMap es <a href="https://switch2osm.org" target="_blank">switch2osm</a>
  
  > Si lo que quereis es publicar vuestros propios datos, probablemente un buen punto de partida sea <a href="https://www.mapbox.com/tilemill" target="_blank">TileMill</a>
 
@@ -285,7 +287,7 @@ Para poder tener más de un elemento en la misma capa, y que compartan estilo y 
 #### Capa GeoJson
 <a href="http://geojson.org" target="_blank">GeoJson</a> es un formato abierto (bajo licencia <a href="http://creativecommons.org" target="_blank">Creative Commons</a>) para codificar elementos geográficos simples y sus propiedades mediante JSON (la notación de objetos JavaScript), por lo que se convierte en el formato ideal para trabajar en las aplicaciones de _web mapping_.
 
-La gran diferencia con el resto de estándares GIS, como GML (Geography Markup Language), es que el estándard no lo mantiene un organismo de estandarización como OGC, si no por un grupo de desarrolladores expertos en _web mapping_ en el 2008 y su especificación se gestiona mediante una lista de correo.
+La gran diferencia con el resto de estándares GIS, como GML (Geography Markup Language), es que el estándar no lo mantiene un organismo de estandarización como OGC, si no un grupo de desarrolladores expertos en _web mapping_ y su especificación se gestiona mediante una lista de correo, desde su primera versión en 2008.
 
 Servidores geoespaciales como <a href="http://geoserver.org" target="_blank">GeoServer</a> pueden devolver datos en formato GeoJson en sus servicios WFS.
 
@@ -296,7 +298,7 @@ Leaflet define la capa <a href="http://leafletjs.com/reference.html#geojson" tar
 <p data-height="551" data-theme-id="0" data-slug-hash="gpPPoV" data-default-tab="js" data-user="xguaita" class='codepen'>See the Pen <a href='http://codepen.io/xguaita/pen/gpPPoV/'>Leaflet GeoJSON</a> by Xisco Guaita (<a href='http://codepen.io/xguaita'>@xguaita</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-  > **Nota:** en ocasiones necesitamos localizar un conjunto de elementos sobre un mapa. La opción más sencilla es crear un fichero GeoJSON con estos elementos. Si sabemos sus coordenadas es muy sencillo, únicamente necesitamos un editor de texto.
+  > **Nota:** en ocasiones necesitamos localizar un conjunto de elementos sobre un mapa. La opción más sencilla es crear un fichero GeoJSON con estos elementos. Si sabemos sus coordenadas es muy fácil, únicamente necesitamos un editor de texto.
   
   > Si no sabemos las coordenadas podemos utilizar aplicaciones GIS de escritorio como <a href="http://www.qgis.org/" target="_blank">QGIS</a> o <a href="http://www.gvsig.org/" target="_blank">gvSIG</a>, ambas de código abierto, o cualquiera de las opciones comerciales. Todas ellas requieren conocimientos de base en sistemas de información geográfica.
   
