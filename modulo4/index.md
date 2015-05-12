@@ -27,6 +27,7 @@ Terminología básica de la programación orientada a objetos:
 + Herencia: los objetos pueden heredar características de otros objetos
 
   > **Nota:** en JavaScript no existe el concepto de _clase_ como sí tienen los lenguajes orientados a objetos como Java, C++ o python
+  > ES6 introduce el concepto de _clase_ mediante la palabra reservada `class`
 
 
 ## Creación de objetos
