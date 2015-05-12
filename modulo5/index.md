@@ -6,7 +6,7 @@ folder: modulo5
 ---
 
 # Javascript en el navegador
-Hasta ahora hemos descrito el lenguaje JavaScript própiamente dicho. Como ya sabemos,  se trata de un lenguaje interpretado que se ejecuta en un _entorno de ejecución_. En este tema estudiaremos la ejecución de JavaScript en el navegador y, por tanto, los _objetos de plataforma_ que proporciona dicho contexto.
+Hasta ahora hemos descrito el lenguaje JavaScript propiamente dicho. Como ya sabemos,  se trata de un lenguaje interpretado que se ejecuta en un _entorno de ejecución_. En este tema estudiaremos la ejecución de JavaScript en el navegador y, por tanto, los _objetos de plataforma_ que proporciona dicho contexto.
 
   > **Nota:** el objetivo de este tema es conocer el contexto de ejecución de navegador y los API que proporciona a los programas escritos con JavaScript. No entraremos en detalle en la escritura de código ya que es preferible utilizar librerías que facilitan su uso, como veremos en el siguiente tema.
 
@@ -63,7 +63,7 @@ Principales propiedades del objeto `window`:
 | `location`| Recupera/establece la url. Devuelve una referencia al objeto <a href="https://developer.mozilla.org/en-US/docs/Web/API/Location" target="_blank"><code>Location</code></a>  |  
 | `history`| Manipular el historial de la sesión de navegación. Devuelve una referencia al objeto <a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank"><code>History</code></a> |  
 | `navigator`| Información del navegador. Devuelve una referencia al objeto <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator" target="_blank"><code>Navigator</code></a> |  
-| `screen`| Propiedades dela pantalla. Devuelve una referencia al objeto <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window.screen" target="_blank"><code>Screen</code></a> |  
+| `screen`| Propiedades de la pantalla. Devuelve una referencia al objeto <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window.screen" target="_blank"><code>Screen</code></a> |  
 | `frames`| Lista de frames, cada frame es un objeto `window` |  
 | `document`| Devuelve una referencia al documento cargado en el navegador, el _document object model (DOM)_ |  
 
@@ -72,12 +72,12 @@ Algunas propiedades de la propia ventana:
 | Propiedad | Descripción |  
 | --------- | ----------- |  
 | `fullScreen`| Si el navegador está en pantalla completa  |  
-| `innerHeight, innerWidth`| Alto y ancho, respectivamente, de área de trabajo de la ventana  |  
-| `outerHeight, outerWidth`| Alto y ancho, respectivamente, de área externa de la ventana  |  
-| `menubar, toolbar, statusbar`| Devuelve sendos objetos para controlar su visibilidad  |  
+| `innerHeight, innerWidth`| Alto y ancho, respectivamente, del área de trabajo de la ventana  |  
+| `outerHeight, outerWidth`| Alto y ancho, respectivamente, del área externa de la ventana  |  
+| `menubar, toolbar, statusbar`| Devuelve los objetos para controlar su visibilidad  |  
 | `name`| Recupera/asigna el título de la ventana  |  
 | `scrollX, scrollY`| Devuelve el desplazamiento del documento  |  
-| `status`| Recupera/estable el texto de la barra de estado  |  
+| `status`| Recupera/asigna el texto de la barra de estado  |  
 
 Principales métodos:
 
@@ -100,12 +100,14 @@ A través del  objeto `window` se accede al nuevo conjunto de _Web APIs_ definid
 + XMLHttpRequest: peticiones asincronas de información a servidores (Ajax)  
 + Geolocation API: permite al navegador acceder a la geolocalización del dispositivo  
 + Web Sockets API: conexión a servidores mediante _streams_ bidireccionales  
-+ IndexedDB API: almacenar y recuperar objetos en bases de datos simples  
-+ Filesystem API: lectura y escritura de ficheros  
++ Indexed Database API: almacenar y recuperar objetos en bases de datos simples en el cliente  
++ Web Storage API: almacenamiento de datos (clave:valor) en el cliente  
++ File API: lectura de ficheros locales  
++ ...
 
 
 ## Document Object Model (DOM)
-El DOM es el API de los documentos HTML, XML y SVG. Proporciona una representación estructurada (en  forma de árbol) del documento HTML que genera el navegador cuando carga una página, y define la forma en que los programas pueden acceder a esta estructura para interactuar con ella: añadir, modificar o eliminar componentes.
+El DOM es el API de los documentos HTML, XML y SVG. Proporciona una representación estructurada (en forma de árbol) del documento HTML que genera el navegador cuando carga una página, y define la forma en que los programas pueden acceder a esta estructura para interactuar con ella: añadir, modificar o eliminar componentes.
 
 El DOM se ha diseñado para ser independiente del lenguaje de programación que manipula sus componentes; nosotros accederemos mediante JavaScript pero existen implementaciones en diferentes lenguajes, como Python, Java, C++...
 
@@ -233,7 +235,7 @@ document.getElementById('miCelda').innerHTML
 | Métodos | Descripción |  
 | --------- | ----------- |  
 | `hasAttribute()`| Comprueba si el elemento tiene un determinado atributo |  
-| `getAttribute()/setAttribute()`| Devuelven/establece el valor de un atributo |  
+| `getAttribute()/setAttribute()`| Devuelve/establece el valor de un atributo |  
 | `removeAttribute()`| Elimina un atributo |  
 
 En la consola:
