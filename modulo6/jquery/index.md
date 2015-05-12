@@ -168,7 +168,7 @@ $('#logo').animate({width:'50%', marginLeft:'25%'}, 2000)
 ## Ajax
 Para finalizar, JQuery dispone de un conjunto de funciones para realizar peticiones asíncronas a los servidores y modificar el contenido de la página sin necesidad de refrescarla (técnicas Ajax).
 
-La función principal es `$.ajax()`, quién se encarga de realizar todas las peticiones Ajax de JQuery. Generalmente no se utiliza directamente ya que se definen funciones para peticiones específicas que simplifican muchísimo su uso:
+La función principal es `$.ajax()`, que se encarga de realizar todas las peticiones Ajax de JQuery. Generalmente no se utiliza directamente ya que se definen funciones para peticiones específicas que simplifican muchísimo su uso:
 
 + `$.get()`: petición get HTTP
 + `$.post()`: petición post HTTP
@@ -364,7 +364,7 @@ Finalmente para cada contenedor le asignamos un evento click que ejecuta la func
 
 ``` js
 function CrearCartas() {
-  var listaCartas = [20];
+  var listaCartas = [];
 
   // Crea la lista de multiplicaciones y resultados
   for (var i = 0; i < 10; i++) {
