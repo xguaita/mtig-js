@@ -8,7 +8,7 @@ var $cartaArriba = null, // Guarda la primera carta de una pareja de clicks
 
 
 function CrearCartas() {
-  var listaCartas = [20];
+  var listaCartas = [];
 
   // Crea la lista de multiplicaciones y resultados
   for (var i = 0; i < 10; i++) {
