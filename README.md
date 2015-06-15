@@ -9,5 +9,5 @@ Material de apoyo del curso de Programación con JavaScript
 
 Código fuente del curso en [/src](../../tree/gh-pages/src)
 
-_Pens_ del tema de Leaflet en <a href="http://codepen.io/collection/naMJdQ" target="_blank">http://codepen.io/collection/naMJdQ</a>
+_Pens_ del tema de Leaflet en <a href="http://codepen.io/collection/naMJdQ" target="_blank" >codepen.io/collection/naMJdQ</a>
 
