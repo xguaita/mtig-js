@@ -5,7 +5,7 @@ Programación con JavaScript
 
 Máster en Tecnologías de la Información Geográfica. LIGIT - UAB
 
-Material de apoyo del curso de Programación con JavaScript
+Material de apoyo del curso de Programación con JavaScript (abr-may 2015)
 
 Código fuente del curso en [/src](../../tree/gh-pages/src)
 
